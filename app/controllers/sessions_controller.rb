@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController 
   def new
-    p "hit the new route"
     render 'new'
   end
 
