@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   get    '/sessions'  => 'sessions#new'
   delete '/sessions' => 'sessions#destroy'
-  post   '/sessions/new'  => 'sessions#create'
+  # post   '/sessions/new'  => 'sessions#create'
+  get   '/sessions/new'  => 'sessions#new'
+  post   '/sessions/create'  => 'sessions#create'
+
+
 
   root 'musicians#index'
 
