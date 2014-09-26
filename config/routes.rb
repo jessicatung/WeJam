@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
 
-  get    '/sessions'  => 'sessions#new'
   delete '/sessions' => 'sessions#destroy'
-  # post   '/sessions/new'  => 'sessions#create'
   get   '/sessions/new'  => 'sessions#new'
-  post   '/sessions/create'  => 'sessions#create'
+  post   '/sessions'  => 'sessions#create'
 
 
 
