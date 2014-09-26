@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     musician = Musician.find_by_email(params[:email])
     if musician.authenticate(params[:password])
       session[:musicians_id] = musician.id
-      redirect_to :root
+      redirect_to musicians_path
     end
   end
 
