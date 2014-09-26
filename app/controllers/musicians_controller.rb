@@ -24,7 +24,6 @@ class MusiciansController < ApplicationController
 	private
 
 	def musician_params
-		p params
 		params.require(:musician).permit(:username, :email, :password_digest, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes)
 	end
 end
