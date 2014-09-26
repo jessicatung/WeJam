@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: WeJam_production
-  username: WeJam
-  password: <%= ENV['WEJAM_DATABASE_PASSWORD'] %>
+  # username: WeJam
+  # password: <%= ENV['WEJAM_DATABASE_PASSWORD'] %>
