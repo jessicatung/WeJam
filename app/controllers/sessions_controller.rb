@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
 
   def create
     musician = Musician.find_by_email(params[:email])
-    p musician
     if musician == params[:password_digest]
       session[:musicians_id] = musician.id
       redirect_to :root
