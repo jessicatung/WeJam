@@ -8,22 +8,23 @@ class MusiciansController < ApplicationController
 	end
 
 	def create
-		@musician = Musician.new(musician_params)
-		if @musician.save
-			session[:musician_id] = @musician.id
-			redirect_to :root
-		else
-			render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
-		end
+	  @musician = Musician.new(musician_params)
+      if @musician.save
+        session[:musician_id] = @musician.id
+        redirect_to :root
+      else
+        render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
+      end
 	end
 
 	def show
-		@musician = Musician.find(params[:id])
+		@musicians = Musician.find(params[:id])
 	end
 
 	private
 
 	def musician_params
-		params.require(:musician).permit(:username, :email, :password, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes)
+		p params
+		params.require(:musician).permit(:username, :email, :password_digest, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes)
 	end
 end

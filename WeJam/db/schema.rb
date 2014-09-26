@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20140925225344) do
 
   create_table "musicians", force: true do |t|
     t.string   "username"
-    t.string   "password_digest"
+    t.string   "password_hash"
     t.string   "email"
     t.string   "location"
     t.string   "instrument"

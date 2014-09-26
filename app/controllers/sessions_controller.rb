@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def musician_params
-    params.require(:musician).permit(:username,:email, :password_hash)
+    params.require(:musician).permit(:username,:email, :password_digest, :email, :location, :instrument, :genre,
+      :skill_level,:url,:gravatar_url,:notes, :available)
   end
 end
