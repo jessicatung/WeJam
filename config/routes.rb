@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
 
-  root 'musicians#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
