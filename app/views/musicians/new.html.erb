@@ -2,45 +2,45 @@
   <h1>Sign Up</h1>
   <div class="sign_up_confirmation">
     <div class="errors"></div>
-    <%= form_tag @musicians do |f| %>
-    <div class="row">
-      <div class= "col-md-5 col-md-offset-5">
-        <div class= "col-md-12 login-space">
-          <%= text_field_tag :username, "Musician Name" %>
+    <%= form_for @musician do |f|%>
+    <div>
+      <div>
+        <div>
+          <%= f.text_field :username, :placeholder =>"Musician Name" %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :email, "Email"%>
+        <div>
+          <%= f.text_field :email, :placeholder =>"Email"  %>
         </div>
-        <div class= "col-md-12 ">
+        <div>
           Password<br>
-          <%= password_field_tag :password_hash, :placeholder=>"Password", :class=>"form-control" %>
+          <%= password_field :password_digest, :class=>"form-control" %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :location, "Location"%>
+        <div>
+          <%= f.text_field :location, :placeholder =>"Location"  %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :instrument, "Instrument"%>
+        <div>
+          <%= f.text_field :instrument, :placeholder =>"Instrument"  %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :genre, "Genre"%>
+        <div>
+          <%= f.text_field :genre, :placeholder =>"Genre"  %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :skill_level, "Skill Level"%>
+        <div>
+          <%= f.text_field :skill_level, :placeholder =>"Skill Level"  %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :url, "Link to Your Sound Sample"%>
+        <div>
+          <%= f.text_field :url, :placeholder =>"Link Your Sound Clips" %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :gravatar_url, "Profile Image"%>
+        <div>
+          <%= f.text_field :gravatar_url, :placeholder =>"Provide a Profile Picture Link"  %>
         </div>
-        <div class= "col-md-12 ">
-          <%= text_field_tag :notes, "More About Your Jam Style"%>
+        <div>
+          <%= f.text_field :notes, :placeholder =>"Describe Your Jam Style"  %>
         </div>
-        <div class= "col-md-4">
+        <div>
           <%= submit_tag "Jam With Us!",  :class=>"btn" %>
         </div>
       <% end %>
       </div>
     </div>
   </div>
-</div>
+</f.div>
