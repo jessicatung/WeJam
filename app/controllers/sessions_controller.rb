@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     musician = Musician.find_by_email(params[:email])
-    if musician == params[:password_digest]
+    if musician.authenticate(params[:password])
       session[:musicians_id] = musician.id
       redirect_to :root
     end
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def musician_params
-    params.require(:musician).permit(:id, :username,:email, :password_digest, :email, :location, :instrument, :genre,
+    params.require(:musician).permit(:id, :username,:email, :password, :email, :location, :instrument, :genre,
       :skill_level,:url,:gravatar_url,:notes, :available)
   end
 end

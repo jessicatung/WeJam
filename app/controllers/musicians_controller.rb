@@ -8,6 +8,7 @@ class MusiciansController < ApplicationController
 	end
 
 	def create
+	  p params
 	  @musician = Musician.new(musician_params)
       if @musician.save
         session[:musician_id] = @musician.id
@@ -24,6 +25,6 @@ class MusiciansController < ApplicationController
 	private
 
 	def musician_params
-		params.require(:musician).permit(:username, :email, :password_digest, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes)
+		params.require(:musician).permit(:username, :email, :password, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes)
 	end
 end
