@@ -34,7 +34,7 @@ gem 'spring',        group: :development
 # Seeding faker data
 gem 'faker', group: [:development, :test]
 
-gem rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem "rspec-rails"
