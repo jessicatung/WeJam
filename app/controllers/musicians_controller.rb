@@ -29,9 +29,9 @@ class MusiciansController < ApplicationController
 	def update
 		if @musician.update_attributes(musician_params)
       redirect_to musician_path(@musician)
-	    else
-	      render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
-	   end 	
+	  else
+	    render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
+	  end 	
 		redirect_to musician_path
   end
 
