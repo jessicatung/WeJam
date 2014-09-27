@@ -35,6 +35,8 @@ gem 'spring',        group: :development
 gem 'faker', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
+gem 'activemodel'
+gem 'shoulda-matchers'
 
 group :development, :test do
   gem "rspec-rails"
