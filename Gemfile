@@ -13,12 +13,10 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'bcrypt', '~> 3.1.7'
 
-group :assets do
-  gem 'sass-rails', '~> 4.0.3'
-  gem 'coffee-rails', '~> 4.0.0'
-  gem 'compass-rails'
-  gem 'zurb-foundation'
-end
+gem 'sass-rails', '~> 4.0.3'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'compass-rails'
+gem 'foundation-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
