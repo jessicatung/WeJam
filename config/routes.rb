@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   delete '/sessions' => 'sessions#destroy'
   get   '/sessions/new'  => 'sessions#new'
   post   '/sessions'  => 'sessions#create'
+  get '/nearby_musicians' => 'musicians#nearby_musicians'
 
 
 
