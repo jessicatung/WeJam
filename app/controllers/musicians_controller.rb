@@ -11,14 +11,17 @@ class MusiciansController < ApplicationController
 	  @musician = Musician.new(musician_params)
       if @musician.save
         session[:musician_id] = @musician.id
-        redirect_to musicians_path
+        # redirect_to musicians_path
+        # This redirects the user to their own profile page after they sign up,
+        # had to do this for testing purposes. Line 14 is original redirect.
+        redirect_to "/musicians/#{@musician.id}"
       else
         render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
       end
 	end
 
 	def show
-		@musicians = Musician.find(params[:id])
+		@musician = Musician.find(params[:id])
 	end
 
 	private
