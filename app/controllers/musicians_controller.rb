@@ -21,6 +21,11 @@ class MusiciansController < ApplicationController
 		@musicians = Musician.find(params[:id])
 	end
 
+	def nearby_musicians
+		@musicians = Musician.all 
+		render :json => @musicians
+	end 
+
 	private
 
 	def musician_params
