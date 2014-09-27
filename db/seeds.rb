@@ -1,8 +1,13 @@
 require 'faker'
 
 def seed
- 10.times {Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample)}
-
+  Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample, lat: 37.789046, long:-122.396059)
+  Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample, lat: 37.783946, long:-122.396059)
+  Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample, lat: 37.783946, long:-122.396059)
+  Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample, lat: 37.283946, long:-122.556059)
+  Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample, lat: 37.483946, long:-122.746059)
+  Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample, lat: 37.283946, long:-122.396059)
+  Musician.create(username: Faker::Internet.user_name, password: "password", email: Faker::Internet.email, location: "Oakland", instrument: Faker::Lorem.word, genre: Faker::Lorem.word, skill_level: Faker::Lorem.word, url: Faker::Internet.url, gravatar_url: Faker::Internet.url, notes: Faker::Lorem.sentence, available: [false, true].sample, lat: 37.583646, long:-122.396059)
 end
 
 seed
