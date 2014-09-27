@@ -1,0 +1,19 @@
+<div class="show_container">
+
+  <h1><%= @musician.username %></h1>
+ 
+  <p>Location: <%= @musician.location %></p>
+  <p>Instrument: <%= @musician.instrument %></p>
+  <p>Genre: <%= @musician.genre %></p>
+  <p>Skill Level: <%= @musician.skill_level %></p>
+  <p>Soundcloud/YouTube Link: <a href="<%= @musician.url%>"><%= @musician.url %></a></p>
+  <p>Pic Link:  <a href="<%= @musician.gravatar_url%>"><%= @musician.gravatar_url %></a></p>
+  <p>About Me: <%= @musician.notes %></p>
+
+  <% if current_musician != nil %>
+    <%= link_to 'edit', edit_musician_path(@musician) %>
+  <% end %>
+     
+</div>
+
+   
