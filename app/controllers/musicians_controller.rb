@@ -1,5 +1,4 @@
 class MusiciansController < ApplicationController
-
   def index
   end
 	
@@ -32,12 +31,12 @@ class MusiciansController < ApplicationController
   end
 
   def update
+    @musician = Musician.find(params[:id])
     if @musician.update_attributes(musician_params)
-      redirect_to musician_path(@musician)
+      redirect_to musicians_path
     else
       render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
     end 	
-    redirect_to musician_path
   end
 
  private
