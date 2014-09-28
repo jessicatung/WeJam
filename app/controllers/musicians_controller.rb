@@ -21,9 +21,20 @@ class MusiciansController < ApplicationController
   end
 
 	def nearby_musicians
-		@musicians = Musician.all 
-		render :json => @musicians
+		@musicians = Musician.where(:available=>true)
+		respond_to do |format|
+			format.json { render :json=> @musicians }
+		end
 	end 
+
+  def set_location
+    @musician = Musician.find_by_id[session[:musician]]
+    if @musician.update_attributes(musician_params)
+      redirect_to musicians_path
+    else
+      render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
+    end   
+  end
 
   def edit
     @musician = Musician.find(params[:id])
