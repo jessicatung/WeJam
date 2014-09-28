@@ -4,41 +4,41 @@
     <div class="errors"></div>
     <%= form_for @musician do |f|%>
     <div>
-      <div>
-        <div class="row">
+      <div class="row">
+        <p>
           <%= f.text_field :username, :placeholder =>"Musician Name" %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :email, :placeholder =>"Email"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           Password<br>
           <%= f.password_field :password %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :location, :placeholder =>"Location"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :instrument, :placeholder =>"Instrument"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :genre, :placeholder =>"Genre"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :skill_level, :placeholder =>"Skill Level"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :url, :placeholder =>"Link Your Sound Clips" %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :gravatar_url, :placeholder =>"Provide a Profile Picture Link"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p>
           <%= f.text_field :notes, :placeholder =>"Describe Your Jam Style"  %>
-        </div>
-        <div>
+        </p>
+        <p>
           <%= submit_tag "Jam With Us!",  :class=>"button postfix" %>
-        </div>
+        </p>
       <% end %>
       </div>
     </div>
