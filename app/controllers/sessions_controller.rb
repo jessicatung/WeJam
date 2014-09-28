@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
     if musician.authenticate(params[:password])
       session[:musicians_id] = musician.id
       redirect_to musicians_path
+    else
+      redirect_to :root
     end
   end
 
