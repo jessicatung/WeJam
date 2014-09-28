@@ -10,10 +10,14 @@
   <p>Pic Link:  <a href="<%= @musician.gravatar_url%>"><%= @musician.gravatar_url %></a></p>
   <p>About Me: <%= @musician.notes %></p>
 
+  <p> <a href="mailto:<%= @musician.email %>">Email Me!</a></p>
+
+     
   <% if current_musician != nil %>
     <%= link_to 'edit', edit_musician_path(@musician) %>
   <% end %>
-     
+
+
 </div>
 
    
