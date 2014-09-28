@@ -1,7 +1,15 @@
-<nav>
-	<%= link_to "Sign Up", new_musician_path, class: "sign_up" %>
-	<%= link_to "Log In", sessions_new_path, class: "log_in" %>
-</nav>
-<div>
-Hello
+<div class="contain-to-grid sticky">
+	<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+		<div id="logo">WeJam</div>
+	</nav>
+</div>
+<div class="row">
+  <div class="small-offset-5 columns small-4 columns">
+    <div class="button">
+      <%= link_to "Sign up ", new_musician_path, class: "sign_up white_button" %>
+    </div>
+    <div class="button">
+     <%= link_to "Log In", sessions_new_path, class: "log_in white_button" %>
+   </div>
+ </div>	
 </div>
