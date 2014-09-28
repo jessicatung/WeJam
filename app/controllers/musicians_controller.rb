@@ -31,6 +31,15 @@ class MusiciansController < ApplicationController
 		render :json => @musicians
 	end 
 	
+  def set_location
+    @musician = Musician.find_by_id[session[:musician]]
+    if @musician.update_attributes(musician_params)
+      redirect_to musicians_path
+    else
+      render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
+    end   
+  end
+
   def edit
     @musician = Musician.find(params[:id])
     render :partial => "edit_form", :locals => {:musician => @musician}
