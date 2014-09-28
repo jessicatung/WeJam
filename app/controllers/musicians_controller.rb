@@ -25,6 +25,8 @@ class MusiciansController < ApplicationController
 		render :json => @musicians
 	end 
 
+	private
+	
   def edit
     @musician = Musician.find(params[:id])
     render :partial => "edit_form", :locals => {:musician => @musician}
