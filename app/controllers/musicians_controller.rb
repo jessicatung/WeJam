@@ -24,8 +24,6 @@ class MusiciansController < ApplicationController
 		@musicians = Musician.all 
 		render :json => @musicians
 	end 
-
-	private
 	
   def edit
     @musician = Musician.find(params[:id])
