@@ -4,41 +4,44 @@
     <div class="errors"></div>
     <%= form_for @musician do |f|%>
     <div>
-      <div>
-        <div class="row">
+      <div class="row">
+
+        <p class="small-5 large-offset-4 columns">
+          <label> Musician Name
           <%= f.text_field :username, :placeholder =>"Musician Name" %>
-        </div>
-        <div class="row">
+          </label>
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :email, :placeholder =>"Email"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p class="small-5 large-offset-4 columns">
           Password<br>
-          <%= f.password_field :password, :class=>"form-control" %>
-        </div>
-        <div class="row">
+          <%= f.password_field :password %>
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :location, :placeholder =>"Location"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :instrument, :placeholder =>"Instrument"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :genre, :placeholder =>"Genre"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :skill_level, :placeholder =>"Skill Level"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :url, :placeholder =>"Link Your Sound Clips" %>
-        </div>
-        <div class="row">
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :gravatar_url, :placeholder =>"Provide a Profile Picture Link"  %>
-        </div>
-        <div class="row">
+        </p>
+        <p class="small-5 large-offset-4 columns">
           <%= f.text_field :notes, :placeholder =>"Describe Your Jam Style"  %>
-        </div>
-        <div>
-          <%= submit_tag "Jam With Us!!!",  :class=>"button postfix" %>
-        </div>
+        </p>
+        <p class="small-5 large-offset-4 columns">
+          <%= submit_tag "Jam With Us!",  :class=>"button postfix" %>
+        </p>
       <% end %>
       </div>
     </div>
