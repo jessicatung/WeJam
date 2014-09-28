@@ -1,49 +1,57 @@
-<div class="forms_container">
-  <h1>Sign Up</h1>
+<div id="new-user-modal"  data-reveal id="newModal">
+  <h1>Play with someone</h1>
   <div class="sign_up_confirmation">
-    <div class="errors"></div>
-    <%= form_for @musician do |f|%>
-    <div>
-      <div class="row">
+<!--     <div class="errors">
+      
+</div> -->
+<%= form_for @musician do |f|%>
 
-        <p class="small-5 large-offset-4 columns">
-          <label> Musician Name
-          <%= f.text_field :username, :placeholder =>"Musician Name" %>
-          </label>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :email, :placeholder =>"Email"  %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          Password<br>
-          <%= f.password_field :password %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :location, :placeholder =>"Location"  %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :instrument, :placeholder =>"Instrument"  %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :genre, :placeholder =>"Genre"  %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :skill_level, :placeholder =>"Skill Level"  %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :url, :placeholder =>"Link Your Sound Clips" %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :gravatar_url, :placeholder =>"Provide a Profile Picture Link"  %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= f.text_field :notes, :placeholder =>"Describe Your Jam Style"  %>
-        </p>
-        <p class="small-5 large-offset-4 columns">
-          <%= submit_tag "Jam With Us!",  :class=>"button postfix" %>
-        </p>
-      <% end %>
-      </div>
-    </div>
+<div class="row">
+  <div class="small-4  small-offset-1 columns">
+    <p>
+      <%= f.text_field :username, :placeholder =>"Musician Name" %>
+    </p>
+    <p>
+      <%= f.text_field :email, :placeholder =>"Email"  %>
+    </p>
+    <p>
+      <!-- Password<br> -->
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.text_field :location, :placeholder =>"Location"  %>
+    </p>
+    <p>
+      <%= f.text_field :instrument, :placeholder =>"Instrument"  %>
+    </p>
   </div>
+  <div class="small-4 columns">
+    <p>
+      <%= f.text_field :genre, :placeholder =>"Genre"  %>
+    </p>
+    <p>
+      <%= f.text_field :skill_level, :placeholder =>"Skill Level"  %>
+    </p>
+    <p>
+      <%= f.text_field :url, :placeholder =>"Link Your Sound Clips" %>
+    </p>
+    <p>
+      <%= f.text_field :gravatar_url, :placeholder =>"Provide a Profile Picture Link"  %>
+    </p>
+    <p>
+      <%= f.text_area :notes, :placeholder =>"Describe Your Jam Style"  %>
+    </p>
+  </div>
+</div>
+<div class="row">
+<div class="small-3  small-offset-5 end columns">
+    <p>
+      <%= submit_tag "Jam With Us!",  :class=>"button postfix" %>
+    </p>
+  </div>
+</div>
+<% end %>
+</div>
+
+</div>
 </div>
