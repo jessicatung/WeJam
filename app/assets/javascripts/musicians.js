@@ -4,7 +4,6 @@ var map;
 
 // initializing map function
 function initialize (location){
-	console.log(location);
 	// assigning new google map obj to currentLocation var to reuse throughout the code
 	var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
 	var marker = new google.maps.Marker({
@@ -15,16 +14,31 @@ function initialize (location){
 	map.panTo(currentLocation)
 	map.setZoom(14)
 	seeUsers();
+	setUserLocation(currentLocation);
 }
 
 // function 
+
+function setUserLocation(currentLocation){
+	console.log(currentLocation)
+	$.ajax({
+		url: "/musician/set_location", 
+		method: "PUT",
+		data: {lat: latitude, long: longitude}
+	})
+	.done(function(server_data){
+		console.log(server_data);
+	})
+	.fail(function(){
+		console.log("go home")
+	})
+}
 
 function seeUsers (){
 	$.ajax({
 		url: "/nearby_musicians",
 	})
 	.done(function(server_data){
-		console.log(server_data)
 		addUserMarkers(server_data);
 	})
 	.fail(function(){
@@ -40,6 +54,16 @@ function addUserMarkers (user_array){
 		})
 	}
 }
+
+// function addMarkerEventListeners(markerArray){
+// 	for (var i=0; i<markerArray.length; i++){
+// 		google.maps.event.addListener(userMarker,"click", function(){
+// 			// map.setCenter(userMarker.getPosition())
+// 			// console.log(userMarker)
+// 			// console.log(userMarker.getPosition())
+// 		})
+// 	}
+// }
 
 $(document).ready(function(){
 	var mapOptions = {
