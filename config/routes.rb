@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post   '/sessions'  => 'sessions#create'
   get '/nearby_musicians' => 'musicians#nearby_musicians'
   put 'musicians/set_location' => 'musicians#set_location'
-
-
+  get 'musicians/contact' =>'musicians#contact'
+  post 'musicians/contact'=>'musicians#contact'
 
   root 'welcome#index'
 
