@@ -13,7 +13,7 @@
         </div>
         <div class="row">
           Password<br>
-          <%= f.password_field :password, :class=>"form-control" %>
+          <%= f.password_field :password %>
         </div>
         <div class="row">
           <%= f.text_field :location, :placeholder =>"Location"  %>
@@ -37,7 +37,7 @@
           <%= f.text_field :notes, :placeholder =>"Describe Your Jam Style"  %>
         </div>
         <div>
-          <%= submit_tag "Jam With Us!!!",  :class=>"button postfix" %>
+          <%= submit_tag "Jam With Us!",  :class=>"button postfix" %>
         </div>
       <% end %>
       </div>
