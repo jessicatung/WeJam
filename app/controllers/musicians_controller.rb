@@ -32,7 +32,7 @@ class MusiciansController < ApplicationController
 	end 
 	
   def set_location
-    @musician = Musician.find_by_id[session[:musician]]
+    @musician = Musician.find_by_id[session[:musician_id]]
     if @musician.update_attributes(musician_params)
       redirect_to musicians_path
     else
