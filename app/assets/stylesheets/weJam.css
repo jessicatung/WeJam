@@ -1,5 +1,23 @@
 #map-canvas{
-	height: 500px;
+	height: 100%;
 	
-	/*background-color: yellow;*/
+}
+
+.sidebar {
+	float: left;
+	top: 0;
+	position: absolute;
+	width: 25%;
+	background-color: #FFF;
+	height: 100%;
+	text-align: center;
+	opacity: 0.9;
+
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 1;
 }
