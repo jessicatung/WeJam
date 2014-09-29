@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Plain_Black_Wide';
+  src: font-url('Plain_Black_Wide.ttf');
+}
+
+
+#logo {
+	color: #FFF;
+  font-size: 1.5em;
+}
+
+#we-jam-welcome-slogan {
+  font-family: 'Plain_Black_Wide';
+  font-size: 3em;
+  text-align: center;
+  margin-top: 4em;
+  color: #FFF;
+}
+.white-button {
+  color: #FFF;
+}
+
+.white-button:hover{
+  color:  #FFF;
+}
+
+.body-img {
+  background-image: url('welcome_jam.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.center {
+  text-align: center;
+}
+
+.button-margin {
+  margin-top: 3em;
+}
+
+.container{
+  height: 100%;
+}
+
