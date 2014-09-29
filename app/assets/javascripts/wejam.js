@@ -4,8 +4,10 @@ WeJam = {
 	},
 	getCoordinatesSuccess: function(position){
 		//run app
-		var mapController = new MapController(position, new MapView())
-		mapController.init()
+		var musiciansController = new MusiciansController()
+		var mapController = new MapController(new MapView())
+		var applicationController = new ApplicationController(position, musiciansController, mapController)
+		applicationController.init()
 		// console.log(position)
 	},
 	getCoordinatesFailure: function(){

@@ -1,27 +1,13 @@
-function MapController(userPosition, view){
-	this.userPosition = userPosition;
+function MapController(view){
 	this.view = view;
+
 }
 
 MapController.prototype = {
-	init: function(){
-		this.view.init(this.userPosition.coords.latitude, this.userPosition.coords.longitude);
-		this.setUserLocationAndGetNearbyMusicians();
+	init: function(userPosition){
+		this.view.init(userPosition.coords.latitude, userPosition.coords.longitude);
 	},
-	setUserLocationAndGetNearbyMusicians: function(){
-		var ajaxRequest = $.ajax({
-			url: "/musicians/set_location", 
-			method: "POST",
-			data: {lat: this.userPosition.coords.latitude, long: this.userPosition.coords.longitude}
-		})
-		ajaxRequest.done(this.getNearbyMusiciansSuccess.bind(this))
-		ajaxRequest.fail(this.getNearbyMusiciansFail.bind(this))
-	},
-	getNearbyMusiciansSuccess: function(response){
-		// response is a collection of musician objects
+	showMarkers: function(response){
 		this.view.dropHellaMarkers(response)
-	},
-	getNearbyMusiciansFail: function(){
-		alert("Sorry, that didn't work!")
 	}
 }
