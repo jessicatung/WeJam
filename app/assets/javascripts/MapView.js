@@ -3,10 +3,10 @@ function MapView(){
 }
 
 MapView.prototype = {
-	init: function(){
+	init: function(userLat, userLong){
 		var mapOptions = {
-			center: new google.maps.LatLng(47.7845089,-122.39692509999999),
-			zoom: 10
+			center: new google.maps.LatLng(userLat, userLong),
+			zoom: 15
 		}
 		var map = new google.maps.Map(document.getElementById("map-canvas"),
   	mapOptions);

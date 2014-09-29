@@ -6,7 +6,7 @@ WeJam = {
 		//run app
 		var mapController = new MapController(position, new MapView())
 		mapController.init()
-		console.log(position)
+		// console.log(position)
 	},
 	getCoordinatesFailure: function(){
 		alert("We can't find you! Still looking.")
