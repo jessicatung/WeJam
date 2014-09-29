@@ -32,10 +32,7 @@ class MusiciansController < ApplicationController
 	end 
 	
   def set_location
-    p params
-    # p session[:musician_id]
     @musician = Musician.find_by(id: session[:musician_id])
-    # p @musician
     if @musician.update_attributes(lat: params[:lat], long: params[:long])
       # ajax response: pass back nearby musician objects
       nearby_musicians
