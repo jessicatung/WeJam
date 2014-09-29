@@ -6,7 +6,7 @@
   </div> -->
 
   <div class="row">
-    <div class="small-4  small-offset-1 columns">
+    <div class="small-5 columns">
       <%= form_for @musician do |f|%>
       <p>
         <%= f.text_field :username, :placeholder =>"Musician Name" %>
@@ -25,7 +25,7 @@
         <%= f.text_field :instrument, :placeholder =>"Instrument"  %>
       </p>
     </div>
-    <div class="small-4 columns">
+    <div class="small-5 columns">
       <p>
         <%= f.text_field :genre, :placeholder =>"Genre"  %>
       </p>
@@ -44,12 +44,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="small-3  small-offset-5 end columns">
+    <div class="small-4  small-offset-4 end columns">
       <p>
         <%= submit_tag "Jam With Us!",  :class=>"button postfix" %>
       </p>
     </div>
   </div>
     <% end %>
+    <a class="closing close-reveal-modal">×</a>
 </div>
 
