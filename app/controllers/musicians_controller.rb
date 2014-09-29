@@ -4,7 +4,7 @@ class MusiciansController < ApplicationController
 	
   def show_me
     @musician = Musician.find(session[:musician_id])
-    render :partial => "show", :locals => {:musician => @musician}
+    render :json => @musician
   end 
 
 	def new
@@ -35,7 +35,7 @@ class MusiciansController < ApplicationController
     @musician = Musician.find_by(id: session[:musician_id])
     if @musician.update_attributes(lat: params[:lat], long: params[:long])
       # ajax response: pass back nearby musician objects
-      nearby_musicians
+      redirect_to musicians_path
     else
       render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
     end   
