@@ -1,6 +1,6 @@
 // ajax request to return current user profile 
 
-$(document).ready(function(){
+// $(document).ready(function(){
 	// 	$.ajax({
 	// 		url: '/musicians/show_me',
 	// 		method: 'GET'
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	// };
 
 	
-})
+// })
 
 
 
