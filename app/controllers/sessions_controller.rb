@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     musician = Musician.find_by_email(params[:email])
-    if musician.authenticate(params[:password])
+    if musician && musician.authenticate(params[:password])
       session[:musicians_id] = musician.id
       redirect_to musicians_path
     else
