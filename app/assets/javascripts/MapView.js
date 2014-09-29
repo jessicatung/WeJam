@@ -13,10 +13,16 @@ MapView.prototype = {
   	mapOptions);
   	this.dropMarker(currentLocation);
 	},
-	dropMarker: function(currentLocation){
+	dropMarker: function(location){
 		var marker = new google.maps.Marker({
-			position: currentLocation,
+			position: location,
 			map: this.map
-		});
+		})
+	},
+	dropHellaMarkers: function(locationCollection){
+		for (var i=0; i<locationCollection.length; i++){
+			this.dropMarker(new google.maps.LatLng(locationCollection[i].lat, locationCollection[i].long))
+		}	
 	}
+
 }
