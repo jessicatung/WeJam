@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  $('.closing').on('click', function(){ 
-    $(".closing").removeClass('close-reveal-modal');
+  $('.close-reveal-modal').on('click', function(){ 
+    $("#logModal").hide( "slow" ); 
+    $("#newModal").hide( "slow" ); 
   });
 })
