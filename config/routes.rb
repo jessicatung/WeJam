@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get   '/sessions/new'  => 'sessions#new'
   post   '/sessions'  => 'sessions#create'
   get '/nearby_musicians' => 'musicians#nearby_musicians'
+  get '/musicians/show_me' => "musicians#show_me"
 
 
 

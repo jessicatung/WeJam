@@ -2,6 +2,11 @@ class MusiciansController < ApplicationController
   def index
   end
 	
+  def show_me
+    @musician = Musician.find(session[:musician_id])
+    render :partial => "show", :locals => {:musician => @musician}
+  end 
+
 	def new
 		@musician = Musician.new
 	end
@@ -18,6 +23,7 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = Musician.find(params[:id])
+    render :partial => "show", :locals => {:musician => @musician}
   end
 
 	def nearby_musicians
