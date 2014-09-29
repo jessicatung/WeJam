@@ -2,7 +2,7 @@
   <h1>Edit Profile</h1>
   <div class="profile_form">
     <div class="errors"></div>
-    <%= form_for @musician do |f|%>
+    <%= form_for @musician, remote: true do |f|%>
     <div>
       <div>
         <div>
