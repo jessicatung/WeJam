@@ -18,7 +18,10 @@
       </div>
     </div>
     <div class="button">
-     <%= link_to "Log In", sessions_new_path, class: "log_in white-button" %>
+     <%= link_to "Log In", "#", class: "log_in white-button", data: { 'reveal-id' => 'logModal'} %>
+     <div id="logModal" class="reveal-modal">
+        <%= render '/sessions/new' %>
+      </div>
    </div>
  </div>	
 </div>
