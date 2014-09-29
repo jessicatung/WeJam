@@ -1,27 +1,23 @@
-function MapController(userPosition, view){
-	this.userPosition = userPosition;
+function MapController(view){
 	this.view = view;
+
 }
 
 MapController.prototype = {
-	init: function(){
-		this.view.init(this.userPosition.coords.latitude, this.userPosition.coords.longitude);
-		this.setUserLocationAndGetNearbyMusicians();
+	init: function(userPosition){
+		this.view.init(userPosition.coords.latitude, userPosition.coords.longitude);
+		console.log(userPosition.coords.latitude, userPosition.coords.longitude)
 	},
-	setUserLocationAndGetNearbyMusicians: function(){
-		var ajaxRequest = $.ajax({
-			url: "/musicians/set_location", 
-			method: "POST",
-			data: {lat: this.userPosition.coords.latitude, long: this.userPosition.coords.longitude}
-		})
-		ajaxRequest.done(this.getNearbyMusiciansSuccess.bind(this))
-		ajaxRequest.fail(this.getNearbyMusiciansFail.bind(this))
-	},
-	getNearbyMusiciansSuccess: function(response){
-		// response is a collection of musician objects
+	showMarkers: function(response){
 		this.view.dropHellaMarkers(response)
 	},
-	getNearbyMusiciansFail: function(){
-		alert("Sorry, that didn't work!")
+	bindMarkerListeners: function(musicianController){
+		for (var i = 0; i < this.view.droppedMarkers.length; i++){
+			// pass it what obj it's listening to, what evt listening for, callback
+      google.maps.event.addListener(this.view.droppedMarkers[i], 'click', function(innerKey) {
+        // this is the particular dropped marker
+        musicianController.showMusiciansProfile(this)
+      });
+    }
 	}
 }
