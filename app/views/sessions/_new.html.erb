@@ -1,0 +1,12 @@
+<div class="logModal" data-reveal=" ">
+  <div class="row">
+    <div class="small-10 small-offset-1 columns">
+      <%= form_tag sessions_path  do %>
+      Email: <%= text_field_tag(:email) %>
+      Password: <%= text_field_tag(:password) %>
+      <%= submit_tag "Sign In", :class=>"button postfix" %>
+      <% end %>
+    </div>
+  </div>
+<a class="closing close-reveal-modal">×</a>
+</div>
