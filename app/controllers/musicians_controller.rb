@@ -32,9 +32,13 @@ class MusiciansController < ApplicationController
 	end 
 	
   def set_location
-    @musician = Musician.find_by_id[session[:musician_id]]
-    if @musician.update_attributes(musician_params)
-      redirect_to musicians_path
+    p params
+    # p session[:musician_id]
+    @musician = Musician.find_by(id: session[:musician_id])
+    # p @musician
+    if @musician.update_attributes(lat: params[:lat], long: params[:long])
+      # ajax response: pass back nearby musician objects
+      nearby_musicians
     else
       render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
     end   
@@ -57,6 +61,6 @@ class MusiciansController < ApplicationController
  private
 
   def musician_params
-    params.require(:musician).permit(:username, :email, :password, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes)
+    params.require(:musician).permit(:username, :email, :password, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes, :lat, :long)
   end
 end
