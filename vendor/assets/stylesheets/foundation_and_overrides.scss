@@ -92,8 +92,8 @@ $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
+// $font-weight-normal: normal !default;
+// $font-weight-bold: bold !default;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -1102,7 +1102,7 @@ $reveal-close-font-size: rem-calc(40);
 $reveal-close-top: rem-calc(8);
 $reveal-close-side: rem-calc(11);
 $reveal-close-color: $base;
-$reveal-close-weight: $font-weight-bold;
+// $reveal-close-weight: $font-weight-bold;
 
 // We use this to set the default radius used throughout the core.
 // $reveal-radius: $global-radius;
