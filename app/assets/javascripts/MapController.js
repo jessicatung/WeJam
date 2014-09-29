@@ -1,6 +1,5 @@
 function MapController(userPosition, view){
 	this.userPosition = userPosition;
-	console.log(userPosition)
 	this.view = view;
 }
 
@@ -19,7 +18,7 @@ MapController.prototype = {
 		ajaxRequest.fail(this.getNearbyMusiciansFail.bind(this))
 	},
 	getNearbyMusiciansSuccess: function(response){
-		console.log(this)
+		// response is a collection of musician objects
 		this.view.dropHellaMarkers(response)
 	},
 	getNearbyMusiciansFail: function(){
