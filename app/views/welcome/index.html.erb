@@ -5,14 +5,17 @@
 </div>
 <div class="container body-img">
   <div class="row">
-  <div id="we-jam-welcome-phrase" class="small-4 columns end phrase-margin">
+  <div id="we-jam-welcome-slogan" class="small-4 columns end phrase-margin">
      Stop Playing With Yourself.
    </div>
  </div>
  <div class="row center">
   <div class="small-4 columns button-margin">
     <div class="button">
-      <%= link_to "Sign up ", new_musician_path, class: "sign_up white-button" %>
+      <%= link_to "Sign up ", "#", class: "sign_up white-button", data: { 'reveal-id' => 'newModal'} %>
+      <div id="newModal" class="reveal-modal">
+        <%= render 'musicians/new' %>
+      </div>
     </div>
     <div class="button">
      <%= link_to "Log In", sessions_new_path, class: "log_in white-button" %>
