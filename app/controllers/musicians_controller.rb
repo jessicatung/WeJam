@@ -31,6 +31,16 @@ class MusiciansController < ApplicationController
 		render :json => @musicians
 	end 
 	
+  def set_location
+    @musician = Musician.find_by(id: session[:musician_id])
+    if @musician.update_attributes(lat: params[:lat], long: params[:long])
+      # ajax response: pass back nearby musician objects
+      nearby_musicians
+    else
+      render :text => @musician.errors.full_messages.join(', '), :status => :unprocessable_entity
+    end   
+  end
+
   def edit
     @musician = Musician.find(params[:id])
     render :partial => "edit_form", :locals => {:musician => @musician}
@@ -48,6 +58,6 @@ class MusiciansController < ApplicationController
  private
 
   def musician_params
-    params.require(:musician).permit(:username, :email, :password, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes)
+    params.require(:musician).permit(:username, :email, :password, :location, :instrument, :genre, :skill_level, :url, :gravatar_url, :availability, :notes, :lat, :long)
   end
 end
