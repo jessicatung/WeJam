@@ -1,16 +1,20 @@
 function MusiciansController(){
-	this.musicianSomething = []
+	this.musicianContainer = {}
 }
 
 MusiciansController.prototype = {
 	init: function(){
-		
+		// pull in displayForm
 	},
 	makeMusicians: function(response){
-		console.log(response)
 		for (var i = 0; i < response.length; i++){
-			this.musicianSomething.push(new Musician(response[i]))
+			var musicianId = response[i].id.toString()
+			this.musicianContainer[musicianId] = new Musician(response[i])
 		}
-		console.log(this.musicianSomething)
+	},
+	showMusiciansProfile: function(droppedMarker){
+		var musicianId = droppedMarker.markerIdentifier.toString()
+		// this.musicianContainer[musicianId] is the musician object connected to the marker clicked on
+		console.log(this.musicianContainer[musicianId])
 	}
 }
