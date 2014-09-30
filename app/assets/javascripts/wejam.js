@@ -21,10 +21,11 @@ WeJam = {
 }
 
 function MusiciansController(userPosition, mapController){
+
 	this.currentMusician = null;
 	this.musicianArray = [];
 
-	this.fetchCurrentMusician();
+	this.fetchCurrentMusician(); 
 	this.fetchMusicians();
 	this.setMyLocation(userPosition);
 	mapController.drawMapWithMusicians(this.musicianArray, this.currentMusician);
@@ -35,6 +36,7 @@ MusiciansController.prototype={
 	fetchCurrentMusician: function(){
 		$.ajax({
 			url: '/musicians/show_me',
+			async: false,
 			method: 'GET'
 		}).done(function(serverData){
 			this.currentMusician = new Musician(serverData)
@@ -56,6 +58,7 @@ MusiciansController.prototype={
 	fetchMusicians: function(){
 		$.ajax({
 			url: '/nearby_musicians',
+			async: false,
 			method: 'GET'
 		}).done(function(serverData){
 			for (var i = 0; i < serverData.length; i++){
