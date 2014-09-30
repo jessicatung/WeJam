@@ -7,7 +7,6 @@ WeJam = {
 		navigator.geolocation.getCurrentPosition(this.getCoordinatesSuccess, this.getCoordinatesFailure.bind(this))
 	},
 	getCoordinatesSuccess: function(userPosition){
-		console.log(userPosition)
 		var musiciansController = new MusiciansController(userPosition);
 		var mapController = new MapController(userPosition);
 	},
@@ -18,14 +17,13 @@ WeJam = {
 }
 
 function musicianView(){
-
 }
 
 function MusiciansController(userPosition){
 	this.view = musicianView
 	this.fetchMe();
-	console.log(userPosition)
 	this.setMyLocation(userPosition);
+	this.fetchMusicians();
 	// this.createMusicianObjects(this.fetchMusicians())
 }	
 
@@ -51,17 +49,19 @@ MusiciansController.prototype={
 		}).fail(function(serverData){
 			console.log("fail")
 		})
+	},
+	fetchMusicians: function(){
+		$.ajax({
+			url: '/nearby_musicians',
+			method: 'GET'
+		}).done(function(serverData){
+			console.log(serverData)
+			console.log("fetched!")
+		}).fail(function(serverData){
+			console.log("fail")
+		})
 	}
 }
-	// fetchMusicians: function(){
-	// 	$.ajax({
-	// 		url: '/musicians/nearby_musicians',
-	// 		method: 'GET'
-	// 	}).done(function(serverData){
-	// 		console.log(serverData)
-	// 	}).fail(function(serverData){
-	// 		console.log("fail")
-	// },
 	// createMusicianObjects: function(response){
 	// 	var musicianArray = {}
 	// 	function(response){
