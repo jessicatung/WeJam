@@ -13,4 +13,3 @@ function Musician(attributes){
 	this.url = attributes.url
 	this.username = attributes.username
 }
-
