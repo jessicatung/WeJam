@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
-
 //= require foundation
-$(document).foundation();
-$(function(){ $(document).foundation(); });
+//= require_tree .
+//
+//
+// Generally don't put actual JS in side of this file

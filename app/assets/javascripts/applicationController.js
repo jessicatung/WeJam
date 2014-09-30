@@ -1,3 +1,4 @@
+// Seems good
 function ApplicationController(userPosition, musiciansController, mapController){
 	this.userPosition = userPosition
 	this.musiciansController = musiciansController
@@ -11,6 +12,7 @@ ApplicationController.prototype = {
 		this.setUserLocationAndGetNearbyMusicians();
 	},
 	setUserLocationAndGetNearbyMusicians: function(){
+    return // debugging noise from steven
 		var ajaxRequest = $.ajax({
 			url: "/musicians/set_location", 
 			method: "POST",

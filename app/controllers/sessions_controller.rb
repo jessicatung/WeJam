@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
     redirect_to :root
   end
 
+  # Dead code, not used.
   def musician_params
     params.require(:musician).permit(:id, :username,:email, :password, :email, :location, :instrument, :genre,
       :skill_level,:url,:gravatar_url,:notes, :available)

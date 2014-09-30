@@ -11,5 +11,9 @@ FactoryGirl.define do
     gravatar_url {Faker::Internet.url}
     notes {Faker::Lorem.paragraph}
     available {"false"}
+
+    factory :skilled_musician do
+      skill_level "Grand Master"
+    end
 	end
 end

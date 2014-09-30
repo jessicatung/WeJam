@@ -4,6 +4,7 @@ function MusiciansController(){
 
 MusiciansController.prototype = {
 	init: function(){
+    return;
 		// pull in displayForm
 		$.ajax({
 			url: '/musicians/show_me',
@@ -31,6 +32,7 @@ MusiciansController.prototype = {
 		console.log(this.musicianContainer[musicianId])
 
 
+    // here's where templates would be sweet
 var profileInfo = "<div class=\"show_container\"><h1>" + musician.username + 
     "</h1><p>Location: " + musician.location + 
     "</p><p>Instrument: " + musician.instrument + 

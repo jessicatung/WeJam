@@ -65,6 +65,21 @@ describe MusiciansController, :type => :controller do
 
   context "#update" do
     before :each do
+      # This should be done with a factory
+      # This should be done with let!
+      #
+      # In the case you need another musician for testing purposes you could
+      # use
+      #
+      # let (note no !) which means that hte thing won't be created until it's
+      # actually used.
+      #
+      # you could have let(:another_user) { create(:musician, username: "bob",
+      # otherValue: "xxx") }
+      #
+      # and that particular row in the DB will not be added until you actually
+      # call `another_user` inside of one of your tests.
+
       @updated_musician = create(:musician, username: "bob", email: "bob@bob.com", location: "your mom", instrument: "alto sax", skill_level: "beginner")
     end
     it "locates the requested @musician" do

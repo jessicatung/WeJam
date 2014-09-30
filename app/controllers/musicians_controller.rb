@@ -3,8 +3,16 @@ class MusiciansController < ApplicationController
   end
 	
   def show_me
-    @musician = Musician.find(session[:musician_id])
-    render :partial => "show", :locals => {:musician => @musician}
+    if @musician = Musician.find(session[:musician_id])
+      # render :partial => "musician", object: @musician
+      # Prefer to use "object" instead of locals that re-name the key that
+      # they're to the left of.  What happens, is if the partial is renamed
+      # "musician" inside of the partial you can invoke a magic method called
+      # "musician" which will get you what is, presently, @musician
+      render :partial => "show", :locals => {:musician => @musician}
+    else
+      redirect_to root_path
+    end
   end 
 
 	def new
@@ -22,8 +30,14 @@ class MusiciansController < ApplicationController
   end
 
   def show
+    # If you decide to do more work in the front end, I think this action makes
+    # sense, but then you'd probably want to start returning JSON.
     @musician = Musician.find(params[:id])
-    render :partial => "show", :locals => {:musician => @musician}
+    if @musician
+      render :partial => "show", :locals => {:musician => @musician}
+    else
+      redirect_to root_path
+    end
   end
 
 	def nearby_musicians

@@ -2,7 +2,7 @@ class CreateMusicians < ActiveRecord::Migration
   def change
     create_table :musicians do |t|
       t.string :username
-      t.string :password_digest
+      t.string :password_digest  # no constraints :(
       t.string :email
       t.string :location
       t.string :instrument
