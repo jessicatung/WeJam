@@ -53,6 +53,10 @@ group :test do
   gem "selenium-webdriver"
 end
 
+group :development, :test do
+  gem 'jasmine'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
