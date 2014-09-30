@@ -1,13 +1,13 @@
 class CreateMusicians < ActiveRecord::Migration
   def change
     create_table :musicians do |t|
-      t.string :username
-      t.string :password_digest
-      t.string :email
-      t.string :location
-      t.string :instrument
-      t.string :genre
-      t.string :skill_level
+      t.string :username, null: :false
+      t.string :password_digest, null: :false
+      t.string :email, null: :false
+      t.string :location, null: :false
+      t.string :instrument, null: :false
+      t.string :genre, null: :false
+      t.string :skill_level, null: :false
       t.string :url
       t.string :gravatar_url
       t.text :notes
