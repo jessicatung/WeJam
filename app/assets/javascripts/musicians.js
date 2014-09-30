@@ -17,9 +17,14 @@ WeJam = {
 	}
 }
 
-function MusiciansController(musicianView, userPosition){
+function musicianView(){
+
+}
+
+function MusiciansController(userPosition){
 	this.view = musicianView
 	this.fetchMe();
+	console.log(userPosition)
 	this.setMyLocation(userPosition);
 	// this.createMusicianObjects(this.fetchMusicians())
 }	
@@ -40,7 +45,7 @@ MusiciansController.prototype={
 		$.ajax({
 			url: "/musicians/set_location", 
 			method: "POST",
-			data: {lat: this.userPosition.coords.latitude, long: this.userPosition.coords.longitude}
+			data: {lat: userPosition.coords.latitude, long: userPosition.coords.longitude}
 		}).done(function(){
 			console.log("success")
 		}).fail(function(serverData){
