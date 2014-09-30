@@ -20,7 +20,14 @@ MapController.prototype = {
 		})
 	},
 	_dropPinables: function(pinables){
-
+		var pinableLatLongs = this._mapIntoGoogleLatLong(pinables)
+		for (var i = 0; i<pinableLatLongs.length; i++){
+			new google.maps.Marker({
+				position: pinableLatLongs[i],
+				map: this.map,
+				marker: pinables[i].id
+			})
+		}
 	},
 
 	_mapIntoGoogleLatLong:function(pinableObjects){
@@ -31,7 +38,6 @@ MapController.prototype = {
 			var googleLatLng = new google.maps.LatLng(lat, long)
 			latLongArray.push(googleLatLng)
 		}
-		console.log(latLongArray)
 		return latLongArray
 	}
 }
