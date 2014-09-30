@@ -13,15 +13,15 @@
   <div class="small-4 columns button-margin">
     <div class="button">
       <%= link_to "Sign up ", "#", class: "sign_up white-button", data: { 'reveal-id' => 'newModal'} %>
-      <div id="newModal" class="reveal-modal" data-reveal>
-        <%= render 'musicians/new' %>
-      </div>
+     <%= content_tag :div, id: 'newModal', class: ['reveal-modal'], data: {reveal: ''} do %>
+       <%= render '/sessions/new' %>
+     <% end %>
     </div>
     <div class="button">
      <%= link_to "Log In", "#", class: "log_in white-button", data: { 'reveal-id' => 'logModal'} %>
-     <div id="logModal" class="reveal-modal" data-reveal>
-        <%= render '/sessions/new' %>
-      </div>
+     <%= content_tag :div, id: 'logModal', class: ['reveal-modal'], data: {reveal: ''} do %>
+       <%= render '/sessions/new' %>
+     <% end %>
    </div>
  </div>	
 </div>
