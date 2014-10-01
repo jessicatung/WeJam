@@ -4,7 +4,7 @@ describe MusiciansController, :type => :controller do
   let!(:musician) {FactoryGirl.create :musician}
 
   context "#new" do
-    # Creation of a new musician in #new is for sign-up functionality
+    # Creation of a new musician in musicians_controller#new is for sign-up functionality
     it "creates a new musician" do
       expect{
         get :create, musician: attributes_for(:musician)
