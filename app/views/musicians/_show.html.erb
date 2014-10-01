@@ -13,7 +13,7 @@
   <p> <a href="mailto:<%= @musician.email %>">Email Me!</a></p>
 
      
-  <% if current_musician != nil %>
+  <% if viewing_my_own_profile != nil %>
     <%= link_to 'edit', edit_musician_path(@musician) %>
   <% end %>
 
