@@ -4,13 +4,11 @@ describe MusiciansController, :type => :controller do
   let!(:musician) {FactoryGirl.create :musician}
 
   context "#new" do
-    it "returns successful status" do
-      get :new
-      expect(response.status).to eq(200)
-    end
-    it "renders the sign up form" do
-      get :new
-      expect(response.body).to render_template(:new)
+    # Creation of a new musician in #new is for sign-up functionality
+    it "creates a new musician" do
+      expect{
+        get :create, musician: attributes_for(:musician)
+        }.to change{Musician.count}.by(1)
     end
   end
 
