@@ -53,7 +53,7 @@ MapController.prototype = {
 		var c = this
 		var clickEvent = google.maps.event.addListener(marker, "click", function(innerKey){
 			$(".sidebar").animate({left:'-=100%'}, 0);
-	    $(".sidebar").animate({left:'0'}, 500);
+	    $(".sidebar").animate({left:'0'}, 200);
 			c._renderLoggedInProfileSidebar(object)
 
 		})
@@ -64,7 +64,7 @@ MapController.prototype = {
 		var c = this
 		google.maps.event.addListener(marker, "click", function(innerKey){
 		$(function(){
-	        $(".sidebar").animate({left:'-=100%'}, 800);
+	        $(".sidebar").animate({left:'-=100%'}, 200);
 	        $(".sidebar").animate({left:'0'}, 500);
 			})
 			c._renderMusicianProfileSidebar(object)
@@ -72,15 +72,15 @@ MapController.prototype = {
 	},
 
 	_renderMusicianProfileSidebar: function(musicianObject){
-		var profileInfo = "<div class=\"show_container\"><h1>" + musicianObject.username + 
+		var profileInfo = 
+			'<img src="http://www.gravatar.com/avatar/' + md5(musicianObject.email) + '.jpg' +' />' +
+			"<div class=\"show_container\"><h1>" + musicianObject.username + 
 	    "</h1><p>Location: " + musicianObject.location + 
 	    "</p><p>Instrument: " + musicianObject.instrument + 
 	    "</p><p>Genre: " + musicianObject.genre +
 	    "</p><p>Skill Level: " + musicianObject.skillLevel + 
 	    "</p><p>Soundcloud/YouTube Link: <a href=\"" + musicianObject.url + 
 	    "\">" + musicianObject.url + 
-	    "</a></p><p>Pic Link:  <a href=\"" + musicianObject.gravatarUrl + 
-	    "\">" + musicianObject.gravatarUrl + 
 	    "</a></p><p>About Me: " + musicianObject.notes + 
 	    "</p> <p> <a href=\"mailto:" + musicianObject.email + 
 	    "\">Email Me!</a></p></div>"
@@ -88,15 +88,15 @@ MapController.prototype = {
 		$(".sidebar").append(profileInfo)
 	},
 	_renderLoggedInProfileSidebar: function(musicianObject){
-		var profileInfo = "<div class=\"show_container\"><h1>" + musicianObject.username + 
+		var profileInfo = 
+			'<img src="http://www.gravatar.com/avatar/' + md5(musicianObject.email) + '.jpg' +' />' +
+			"<div class=\"show_container\"><h1>" + musicianObject.username +
 	    "</h1><p>Location: " + musicianObject.location + 
 	    "</p><p>Instrument: " + musicianObject.instrument + 
 	    "</p><p>Genre: " + musicianObject.genre +
 	    "</p><p>Skill Level: " + musicianObject.skillLevel + 
 	    "</p><p>Soundcloud/YouTube Link: <a href=\"" + musicianObject.url + 
 	    "\">" + musicianObject.url + 
-	    "</a></p><p>Pic Link:  <a href=\"" + musicianObject.gravatarUrl + 
-	    "\">" + musicianObject.gravatarUrl + 
 	    "</a></p><p>About Me: " + musicianObject.notes + 
 	    "</p> <p> <a href=\"\"musicians\"" + musicianObject.id + "\"edit" +
 	    "\">Update Profile</a></p></div>"

@@ -9,7 +9,6 @@ class CreateMusicians < ActiveRecord::Migration
       t.string :genre, null: :false
       t.string :skill_level, null: :false
       t.string :url
-      t.string :gravatar_url
       t.text :notes
       t.boolean :available
 
