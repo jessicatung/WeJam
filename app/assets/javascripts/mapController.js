@@ -16,7 +16,8 @@ MapController.prototype = {
 		var specificMarker = new google.maps.Marker({
 			position: specificPinableLatArray[0],
 			map: this.map,
-			marker: specificPinable.id
+			marker: specificPinable.id,
+			icon: 'assets/current-user-marker.png'
 		})
 		this._addLoggedInMarkerEventListeners(specificMarker, specificPinable)
 		return specificMarker;
@@ -28,7 +29,8 @@ MapController.prototype = {
 			var marker = new google.maps.Marker({
 				position: pinableLatLongs[i],
 				map: this.map,
-				marker: pinables[i].id
+				marker: pinables[i].id,
+				icon: 'assets/musician-marker.png'
 			})
 			markerArray.push(marker)
 			this._addMarkerEventListener(marker, pinables[i])
