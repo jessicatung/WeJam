@@ -13,21 +13,27 @@ MapController.prototype = {
 		var pinableObjects = [];
 		pinableObjects.push(specificPinable)
 		var specificPinableLatArray = this._mapIntoGoogleLatLong(pinableObjects)
-		new google.maps.Marker({
+		var specificMarker = new google.maps.Marker({
 			position: specificPinableLatArray[0],
 			map: this.map,
 			marker: specificPinable.id
 		})
+		this._addMarkerEventListener(specificMarker, specificPinable)
+		return specificMarker;
 	},
 	_dropPinables: function(pinables){
 		var pinableLatLongs = this._mapIntoGoogleLatLong(pinables)
+		var markerArray = [];
 		for (var i = 0; i<pinableLatLongs.length; i++){
-			new google.maps.Marker({
+			var marker = new google.maps.Marker({
 				position: pinableLatLongs[i],
 				map: this.map,
 				marker: pinables[i].id
 			})
+			markerArray.push(marker)
+			this._addMarkerEventListener(marker, pinables[i])
 		}
+		return markerArray;
 	},
 
 	_mapIntoGoogleLatLong:function(pinableObjects){
@@ -39,6 +45,14 @@ MapController.prototype = {
 			latLongArray.push(googleLatLng)
 		}
 		return latLongArray
+	},
+
+	_addMarkerEventListener: function(marker, object){
+		google.maps.event.addListener(marker, "click", function(innerKey){
+			console.log(object)
+			console.log(marker)
+		})
 	}
+
 }
 
