@@ -55,9 +55,13 @@ describe MusiciansController, :type => :controller do
       get :edit, id: musician.id
       expect(assigns(:musician)).to eq musician
     end
-    it "renders edit view successfully" do
+    it "loads edit view successfully" do
       get :edit, {id: musician.id, musician: attributes_for(:musician)}
       expect(response).to be_success
+    end
+    it "renders edit template" do
+      get :edit, {id: musician.id, musician: attributes_for(:musician)}
+      expect(response.body).to render_template(:partial => "_edit_form")
     end
   end
 
