@@ -44,7 +44,7 @@ describe MusiciansController, :type => :controller do
     end
     it "renders the show template" do
       get :show, id: musician.id
-      expect(response).to render_template("show")
+      expect(response.body).to render_template(:partial => "_show")
     end
     it "assigns musician to @musician" do
       get :show, id: musician.id
