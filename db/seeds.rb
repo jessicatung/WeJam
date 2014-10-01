@@ -5,7 +5,7 @@ def seed
 
   Musician.create(username: "Kelly Yamamoto", password: "password", email: "mrsyamamoto2007@gmail.com", location: "San Francisco, CA", instrument: "Piano", genre: "Jazz", skill_level: "Jam Pro", url: "http://devamnesia.wordpress.com", notes: "Low key, love tickling them ivory keys. Would love to find people to make music with!", available: [false, true].sample, lat: 37.777901, long:-122.396620)
 
-  Musician.create(username: "Matt Darin", password: "password", email: "mgd2233@gmail.com", location: "San Francisco, CA", instrument: "Drums", genre: "Alternative", skill_level: "Animal", url: "https://www.linkedin.com/pub/matthew-darin/41/815/71a", notes: "!", available: [false, true].sample, lat: 37.788610, long:-122.406050)
+  Musician.create(username: "Matt Darin", password: "password", email: "mgd2233@gmail.com", location: "San Francisco, CA", instrument: "Drums", genre: "Alternative", skill_level: "Animal", url: "https://www.linkedin.com/pub/matthew-darin/41/815/71a", notes: "I didn't tell anyone on my team that I play drums until it was time to seed my profile! :)", available: [false, true].sample, lat: 37.788610, long:-122.406050)
 
   Musician.create(username: "Derek Reeve", password: "password", email: "derek@devbootcamp.com", location: "San Francisco, CA", instrument: "Drums", genre: "Emo Metal", skill_level: "Badass", url: "http://about.me/derekreeve", notes: "Drummer, software developer, avid listener of music and taker of pictures.", available: [false, true].sample, lat: 37.780521, long:-122.404613)
 
