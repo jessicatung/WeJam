@@ -18,7 +18,7 @@ MapController.prototype = {
 			map: this.map,
 			marker: specificPinable.id
 		})
-		this._addMarkerEventListener(specificMarker, specificPinable)
+		this._addLoggedInMarkerEventListeners(specificMarker, specificPinable)
 		return specificMarker;
 	},
 	_dropPinables: function(pinables){
@@ -47,11 +47,22 @@ MapController.prototype = {
 		return latLongArray
 	},
 
+	_addLoggedInMarkerEventListeners: function(marker, object){
+		var c = this
+		var clickEvent = google.maps.event.addListener(marker, "click", function(innerKey){
+			c._renderProfileSidebar(object)
+
+		})
+		google.maps.event.trigger(marker, 'click', clickEvent);
+	},
+
 	_addMarkerEventListener: function(marker, object){
 		var c = this
 		google.maps.event.addListener(marker, "click", function(innerKey){
-			console.log(object)
-			console.log(c)
+		$(function(){
+	        $(".sidebar").animate({left:'-=100%'}, 800);
+	        $(".sidebar").animate({left:'0'}, 500);
+			})
 			c._renderProfileSidebar(object)
 		})
 	},
