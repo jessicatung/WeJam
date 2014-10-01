@@ -50,6 +50,8 @@ MapController.prototype = {
 	_addLoggedInMarkerEventListeners: function(marker, object){
 		var c = this
 		var clickEvent = google.maps.event.addListener(marker, "click", function(innerKey){
+			$(".sidebar").animate({left:'-=100%'}, 0);
+	    $(".sidebar").animate({left:'0'}, 500);
 			c._renderProfileSidebar(object)
 
 		})
