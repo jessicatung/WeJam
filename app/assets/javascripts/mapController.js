@@ -54,7 +54,7 @@ MapController.prototype = {
 		var clickEvent = google.maps.event.addListener(marker, "click", function(innerKey){
 			$(".sidebar").animate({left:'-=100%'}, 0);
 	    $(".sidebar").animate({left:'0'}, 500);
-			c._renderProfileSidebar(object)
+			c._renderLoggedInProfileSidebar(object)
 
 		})
 		google.maps.event.trigger(marker, 'click', clickEvent);
@@ -67,11 +67,11 @@ MapController.prototype = {
 	        $(".sidebar").animate({left:'-=100%'}, 800);
 	        $(".sidebar").animate({left:'0'}, 500);
 			})
-			c._renderProfileSidebar(object)
+			c._renderMusicianProfileSidebar(object)
 		})
 	},
 
-	_renderProfileSidebar: function(musicianObject){
+	_renderMusicianProfileSidebar: function(musicianObject){
 		var profileInfo = "<div class=\"show_container\"><h1>" + musicianObject.username + 
 	    "</h1><p>Location: " + musicianObject.location + 
 	    "</p><p>Instrument: " + musicianObject.instrument + 
@@ -86,7 +86,22 @@ MapController.prototype = {
 	    "\">Email Me!</a></p></div>"
 		$(".sidebar").empty()
 		$(".sidebar").append(profileInfo)
+	},
+	_renderLoggedInProfileSidebar: function(musicianObject){
+		var profileInfo = "<div class=\"show_container\"><h1>" + musicianObject.username + 
+	    "</h1><p>Location: " + musicianObject.location + 
+	    "</p><p>Instrument: " + musicianObject.instrument + 
+	    "</p><p>Genre: " + musicianObject.genre +
+	    "</p><p>Skill Level: " + musicianObject.skillLevel + 
+	    "</p><p>Soundcloud/YouTube Link: <a href=\"" + musicianObject.url + 
+	    "\">" + musicianObject.url + 
+	    "</a></p><p>Pic Link:  <a href=\"" + musicianObject.gravatarUrl + 
+	    "\">" + musicianObject.gravatarUrl + 
+	    "</a></p><p>About Me: " + musicianObject.notes + 
+	    "</p> <p> <a href=\"\"musicians\"" + musicianObject.id + "\"edit" +
+	    "\">Update Profile</a></p></div>"
+		$(".sidebar").empty()
+		$(".sidebar").append(profileInfo)
 	}
-
 }
 
