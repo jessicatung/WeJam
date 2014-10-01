@@ -1,5 +1,10 @@
 class MusiciansController < ApplicationController
   def index
+    if session[:musician_id] 
+      musicians_path
+    else
+      redirect_to :root
+    end
   end
 	
   def show_me
