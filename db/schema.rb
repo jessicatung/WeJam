@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140927200537) do
     t.string   "genre"
     t.string   "skill_level"
     t.string   "url"
-    t.string   "gravatar_url"
     t.text     "notes"
     t.boolean  "available"
     t.datetime "created_at"
