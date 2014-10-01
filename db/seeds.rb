@@ -9,7 +9,7 @@ def seed
 
   Musician.create(username: "Derek Reeve", password: "password", email: "derek@devbootcamp.com", location: "San Francisco, CA", instrument: "Drums", genre: "Emo Metal", skill_level: "Badass", url: "http://about.me/derekreeve", notes: "Drummer, software developer, avid listener of music and taker of pictures.", available: [false, true].sample, lat: 37.780521, long:-122.404613)
 
-  Musician.create(username: "Josh Marsh", password: "password", email: "josh@devbootcamp.com", location: "San Francisco", instrument: "Composer", genre: "Hardcore", skill_level: "Awesome", url: "http://jkymarsh.com/", notes: "Composer. I love hardcore. Front-end developer, UI designer, javascript fanatic.", available: [false, true].sample, lat: 37.772999, long:-122.388144)
+  Musician.create(username: "Josh Marsh", password: "password", email: "jkymarsh@gmail.com", location: "San Francisco", instrument: "Composer", genre: "Hardcore", skill_level: "Awesome", url: "http://jkymarsh.com/", notes: "Composer. I love hardcore. Front-end developer, UI designer, javascript fanatic.", available: [false, true].sample, lat: 37.772999, long:-122.388144)
 
   Musician.create(username: "Sandra Cohen", password: "password", email: "sandra.cohen.ux@gmail.com", location: "San Francisco", instrument: "Voice", genre: "Jazz", skill_level: "Crooner Extroardinaire", url: "http://bobandra.com", notes: "I love jamming to jazz and funk, working on my guitar skills. Accapella is my thing!", available: [false, true].sample, lat: 37.789933, long:-122.394307)
 
