@@ -10,7 +10,16 @@ WeJam = {
 		this.userPosition = userPosition;
 		mapController = new MapController("map-canvas",{
 			center: new google.maps.LatLng(this.userPosition.coords.latitude, this.userPosition.coords.longitude),
-			zoom: 15
+			zoom: 15,
+			panControl: true,
+			panControlOptions:{
+				position: google.maps.ControlPosition.TOP_RIGHT
+			},
+			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.LARGE,
+				position: google.maps.ControlPosition.RIGHT_TOP
+			},
+			// zoomControl: true,
 		});
 		musiciansController = new MusiciansController(userPosition, mapController);
 	},
