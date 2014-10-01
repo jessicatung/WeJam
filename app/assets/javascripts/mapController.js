@@ -73,7 +73,7 @@ MapController.prototype = {
 
 	_renderMusicianProfileSidebar: function(musicianObject){
 		var profileInfo = 
-			'<img src="http://www.gravatar.com/avatar/' + md5(musicianObject.email) + '.jpg' +' />' +
+			'<img id="gravatar" src="http://www.gravatar.com/avatar/' + md5(musicianObject.email) + '.jpg' +' />' +
 			"<div class=\"show_container\"><h1>" + musicianObject.username + 
 	    "</h1><p>Location: " + musicianObject.location + 
 	    "</p><p>Instrument: " + musicianObject.instrument + 
@@ -89,7 +89,7 @@ MapController.prototype = {
 	},
 	_renderLoggedInProfileSidebar: function(musicianObject){
 		var profileInfo = 
-			'<img src="http://www.gravatar.com/avatar/' + md5(musicianObject.email) + '.jpg' +' />' +
+			'<img id="gravatar" src="http://www.gravatar.com/avatar/' + md5(musicianObject.email) + '.jpg' +' />' +
 			"<div class=\"show_container\"><h1>" + musicianObject.username +
 	    "</h1><p>Location: " + musicianObject.location + 
 	    "</p><p>Instrument: " + musicianObject.instrument + 
