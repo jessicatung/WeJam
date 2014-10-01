@@ -72,14 +72,16 @@ MapController.prototype = {
 	},
 
 	_renderProfileSidebar: function(musicianObject){
-		var profileInfo = "<div class=\"show_container\"><h1>" + musicianObject.username + 
+		debugger
+		var profileInfo =  
+	    '<img src="http://www.gravatar.com/avatar/' + md5(musicianObject.email) + '.jpg' +' />' + 
+	    "<div class=\"show_container\"><h1>" + musicianObject.username +
 	    "</h1><p>Location: " + musicianObject.location + 
 	    "</p><p>Instrument: " + musicianObject.instrument + 
 	    "</p><p>Genre: " + musicianObject.genre +
 	    "</p><p>Skill Level: " + musicianObject.skillLevel + 
 	    "</p><p>Soundcloud/YouTube Link: <a href=\"" + musicianObject.url + 
 	    "\">" + musicianObject.url + 
-	    "</a></p><p>Pic Link:  <a href=\"" + musicianObject.gravatarUrl + 
 	    "\">" + musicianObject.gravatarUrl + 
 	    "</a></p><p>About Me: " + musicianObject.notes + 
 	    "</p> <p> <a href=\"mailto:" + musicianObject.email + 

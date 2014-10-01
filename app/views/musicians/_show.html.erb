@@ -1,5 +1,6 @@
 <div class="show_container">
 
+  <p><%= gravatar_tag @musician.email, :size => 20 %></p>
   <h1><%= @musician.username %></h1>
  
   <p>Location: <%= @musician.location %></p>
