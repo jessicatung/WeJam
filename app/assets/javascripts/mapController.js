@@ -16,7 +16,8 @@ MapController.prototype = {
 		var specificMarker = new google.maps.Marker({
 			position: specificPinableLatArray[0],
 			map: this.map,
-			marker: specificPinable.id
+			marker: specificPinable.id,
+			icon: 'assets/current-user-marker.png'
 		})
 		this._addMarkerEventListener(specificMarker, specificPinable)
 		return specificMarker;
@@ -28,15 +29,15 @@ MapController.prototype = {
 			var marker = new google.maps.Marker({
 				position: pinableLatLongs[i],
 				map: this.map,
-				marker: pinables[i].id
+				marker: pinables[i].id,
+				icon: 'assets/musician-marker.png'
 			})
 			markerArray.push(marker)
 			this._addMarkerEventListener(marker, pinables[i])
 		}
 		return markerArray;
 	},
-
-	_mapIntoGoogleLatLong:function(pinableObjects){
+	_mapIntoGoogleLatLong: function(pinableObjects){
 		var latLongArray = []
 		for (var i = 0; i < pinableObjects.length; i++){
 			var lat = pinableObjects[i].lat
