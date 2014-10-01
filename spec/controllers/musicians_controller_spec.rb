@@ -4,13 +4,11 @@ describe MusiciansController, :type => :controller do
   let!(:musician) {FactoryGirl.create :musician}
 
   context "#new" do
-    it "returns successful status" do
-      get :new
-      expect(response.status).to eq(200)
-    end
-    it "renders the sign up form" do
-      get :new
-      expect(response.body).to render_template(:new)
+    # Creation of a new musician in musicians_controller#new is for sign-up functionality
+    it "creates a new musician" do
+      expect{
+        get :create, musician: attributes_for(:musician)
+        }.to change{Musician.count}.by(1)
     end
   end
 
@@ -44,7 +42,7 @@ describe MusiciansController, :type => :controller do
     end
     it "renders the show template" do
       get :show, id: musician.id
-      expect(response).to render_template("show")
+      expect(response.body).to render_template(:partial => "_show")
     end
     it "assigns musician to @musician" do
       get :show, id: musician.id
@@ -57,9 +55,13 @@ describe MusiciansController, :type => :controller do
       get :edit, id: musician.id
       expect(assigns(:musician)).to eq musician
     end
-    it "renders edit view successfully" do
+    it "loads edit view successfully" do
       get :edit, {id: musician.id, musician: attributes_for(:musician)}
       expect(response).to be_success
+    end
+    it "renders edit template" do
+      get :edit, {id: musician.id, musician: attributes_for(:musician)}
+      expect(response.body).to render_template(:partial => "_edit_form")
     end
   end
 

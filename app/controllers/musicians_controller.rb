@@ -8,6 +8,7 @@ class MusiciansController < ApplicationController
   end 
 
 	def new
+    # Creation of new musician is necessary for our sign-up form to work
 		@musician = Musician.new
 	end
 
