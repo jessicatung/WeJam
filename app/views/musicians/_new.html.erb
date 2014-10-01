@@ -1,45 +1,49 @@
 <div data-reveal=" ">
   <h2 class="sign-up">Play with someone</h2>
-  <!-- <div class="sign_up_confirmation"></div> -->
-  <!--     <div class="errors">
-
-  </div> -->
-
   <div class="row">
     <div class="small-5 columns">
       <%= form_for @musician do |f|%>
       <p>
-        <%= f.text_field :username, :placeholder =>"Musician Name" %>
+        <label for="left-label" class="left">Musician Name</label>
+        <%= f.text_field :username %>
       </p>
       <p>
-        <%= f.text_field :email, :placeholder =>"Email"  %>
+        <label for="left-label" class="left">Email</label>
+        <%= f.text_field :email %>
       </p>
       <p>
-      <!-- Password<br> -->
+        <label for="left-label" class="left">Password</label>
         <%= f.password_field :password %>
       </p>
       <p>
-        <%= f.text_field :location, :placeholder =>"Location"  %>
+        <label for="left-label" class="left">Location</label>
+        <%= f.text_field :location %>
       </p>
       <p>
-        <%= f.text_field :instrument, :placeholder =>"Instrument"  %>
+        <label for="left-label" class="left">Instrument</label>
+        <%= f.text_field :instrument %>
       </p>
     </div>
     <div class="small-5 columns">
       <p>
-        <%= f.text_field :genre, :placeholder =>"Genre"  %>
+        <label for="left-label" class="left">Genre</label>
+        <%= f.text_field :genre %>
       </p>
       <p>
-        <%= f.text_field :skill_level, :placeholder =>"Skill Level"  %>
+         <label for="left-label" class="left">Skill Level</label>
+        <%= f.text_field :skill_level %>
       </p>
       <p>
-        <%= f.text_field :url, :placeholder =>"Link Your Sound Clips" %>
+        <label for="left-label" class="left">Link Your Sound Clips</label>
+        <%= f.text_field :url %>
       </p>
       <p>
-        <%= f.text_field :gravatar_url, :placeholder =>"Provide a   Profile Picture Link"  %>
+        <label for="left-label" class="left">Profile Image Url</label>
+        <%= f.text_field :gravatar_url %>
       </p>
       <p>
-        <%= f.text_area :notes, :placeholder =>"Describe Your Jam Style"  %>
+        <label for="left-label" class="left">Describe Your Jam Style</label>
+        <%= f.text_area :notes %>
       </p>
     </div>
   </div>
@@ -50,7 +54,7 @@
       </p>
     </div>
   </div>
-    <% end %>
-    <a class="closing close-reveal-modal">×</a>
+  <% end %>
+  <a class="closing close-reveal-modal">×</a>
 </div>
 
