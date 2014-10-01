@@ -5,13 +5,11 @@ $(document).ready(function(){
 WeJam = {
 	initialize: function(){
 		navigator.geolocation.getCurrentPosition(this.getCoordinatesSuccess, this.getCoordinatesFailure)
-	},
-	getCoordinatesSuccess: function(userPosition){
-		this.userPosition = userPosition;
 		mapController = new MapController("map-canvas",{
-			center: new google.maps.LatLng(this.userPosition.coords.latitude, this.userPosition.coords.longitude),
-			zoom: 15,
+			center: new google.maps.LatLng(37, -121),
+			zoom: 3,
 			panControl: true,
+			mapTypeId: google.maps.MapTypeId.SATELLITE,
 			panControlOptions:{
 				position: google.maps.ControlPosition.TOP_RIGHT
 			},
@@ -19,8 +17,13 @@ WeJam = {
 				style: google.maps.ZoomControlStyle.LARGE,
 				position: google.maps.ControlPosition.RIGHT_TOP
 			},
-			// zoomControl: true,
 		});
+	},
+	getCoordinatesSuccess: function(userPosition){
+		this.userPosition = userPosition;
+		mapController.map.setZoom(14);
+		mapController.map.panTo(new google.maps.LatLng(userPosition.coords.latitude, userPosition.coords.longitude));
+		mapController.map.setMapTypeId(google.maps.MapTypeId.HYBRID);
 		musiciansController = new MusiciansController(userPosition, mapController);
 	},
 	getCoordinatesFailure: function(){
