@@ -1,7 +1,11 @@
 //init with userLocation and musicians array
 
 function MapController(selector, mapOptions){
-	this.map = new google.maps.Map(document.getElementById(selector), mapOptions)
+  if ($(selector).length > 0) {
+    this.map = new google.maps.Map(document.getElementById(selector), mapOptions);
+  } else {
+    console.log('Do not have an element onto which to bind the map.')
+  }
 }
 
 MapController.prototype = {
