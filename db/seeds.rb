@@ -1,6 +1,6 @@
-require 'faker'
-
 def seed
+	Musician.destroy_all
+
   Musician.create(username: "Joan Torres", password: "password", email: "joan.torres@upr.edu", location: "San Francisco, CA", instrument: "Bass Guitar", genre: "Jazz", skill_level: "Grand Master", url: "http://joantorresmusic.com/", notes: "I am a bassist and composer. I play a wide variety of music including Salsa, Rock, Latin Jazz, and more!", available: [false, true].sample, lat: 37.782268, long:-122.390236)
 
   Musician.create(username: "Kelly Yamamoto", password: "password", email: "mrsyamamoto2007@gmail.com", location: "San Francisco, CA", instrument: "Piano", genre: "Jazz", skill_level: "Jam Pro", url: "http://devamnesia.wordpress.com", notes: "Low key, love tickling them ivory keys. Would love to find people to make music with!", available: [false, true].sample, lat: 37.777901, long:-122.396620)
