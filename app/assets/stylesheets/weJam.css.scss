@@ -16,6 +16,8 @@
 	text-align: center;
 	opacity: 0.9;
 	word-wrap: break-word;
+	font-family: 'OpenSans-CondLight';
+	font-size: 1em;
 }
 
 .container {
@@ -25,3 +27,6 @@
 	z-index: 1;
 }
 
+.sidebar p {
+	font-size: 1.3rem;
+}
