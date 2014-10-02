@@ -5,6 +5,9 @@ $(document).ready(function(){
 WeJam = {
 	initialize: function(){
 		navigator.geolocation.getCurrentPosition(this.getCoordinatesSuccess, this.getCoordinatesFailure)
+	},
+	getCoordinatesSuccess: function(userPosition){
+		this.userPosition = userPosition;
 		mapController = new MapController("map-canvas",{
 			center: new google.maps.LatLng(37, -121),
 			zoom: 3,
@@ -18,9 +21,6 @@ WeJam = {
 				position: google.maps.ControlPosition.RIGHT_TOP
 			}
 		});
-	},
-	getCoordinatesSuccess: function(userPosition){
-		this.userPosition = userPosition;
 		mapController.map.setZoom(15);
 		mapController.map.panTo(new google.maps.LatLng(userPosition.coords.latitude, userPosition.coords.longitude));
 		mapController.map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
