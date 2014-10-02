@@ -15,6 +15,11 @@
 		</div>
 		<div class="sidebar">
 		</div>
+		<div class="edit_profile">
+      <% if viewing_my_own_profile %>
+    		<%= link_to 'Edit Your Profile', edit_musician_path(viewing_my_own_profile), method: :get %>
+      <% end %>
+		</div>
 	</div>
 </body>
 </html> 
