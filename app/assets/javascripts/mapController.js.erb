@@ -17,7 +17,7 @@ MapController.prototype = {
 			position: specificPinableLatArray[0],
 			map: this.map,
 			marker: specificPinable.id,
-			icon: 'assets/current-user-marker.png'
+      icon: '<%= asset_path("current-user-marker.png") %>'
 		})
 		this._addLoggedInMarkerEventListeners(specificMarker, specificPinable)
 		return specificMarker;
@@ -30,7 +30,7 @@ MapController.prototype = {
 				position: pinableLatLongs[i],
 				map: this.map,
 				marker: pinables[i].id,
-				icon: 'assets/musician-marker.png'
+				icon: '<%= asset_path("musician-marker.png") %>'
 			})
 			markerArray.push(marker)
 			this._addMarkerEventListener(marker, pinables[i])
