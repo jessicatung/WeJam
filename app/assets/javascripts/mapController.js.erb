@@ -6,8 +6,8 @@ function MapController(selector, mapOptions){
 
 MapController.prototype = {
 	drawMapWithMusicians: function(pinables, specificPinable){
-		this._dropSpecificPin(specificPinable);
 		this._dropPinables(pinables);
+		this._dropSpecificPin(specificPinable);
 	},
 	_dropSpecificPin: function(specificPinable){
 		var pinableObjects = [];
