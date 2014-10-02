@@ -15,8 +15,9 @@
 	height: 100%;
 	text-align: center;
 	opacity: 0.9;
-	overflow: scroll;
-	text-overflow: ellipsis;
+	word-wrap: break-word;
+	font-family: 'OpenSans-CondLight';
+	font-size: 1em;
 }
 
 .container {
@@ -26,3 +27,6 @@
 	z-index: 1;
 }
 
+.sidebar p {
+	font-size: 1.3rem;
+}
