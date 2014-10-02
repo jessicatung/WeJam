@@ -15,8 +15,7 @@
 	height: 100%;
 	text-align: center;
 	opacity: 0.9;
-	overflow: scroll;
-	text-overflow: ellipsis;
+	word-wrap: break-word;
 }
 
 .container {
