@@ -28,6 +28,13 @@
             <% end %>
           </li>
         </ul>
+        <ul class="right">
+          <li>
+            <% if viewing_my_own_profile %>
+            <%= link_to 'Edit Profile', edit_musician_path(viewing_my_own_profile), method: :get %>
+      <% end %>
+          </li>
+        </ul>
       </section>
     </nav>
   </div>
