@@ -98,8 +98,7 @@ MapController.prototype = {
 	    "</p><p>Soundcloud/YouTube Link: <a href=\"" + musicianObject.url + 
 	    "\">" + musicianObject.url + 
 	    "</a></p><p>About Me: " + musicianObject.notes + 
-	    "</p> <p> <a href=\"\"musicians\"" + musicianObject.id + "\"edit" +
-	    "\">Update Profile</a></p></div>"
+	    "</p> </div>"
 		$(".sidebar").empty()
 		$(".sidebar").append(profileInfo)
 	}
