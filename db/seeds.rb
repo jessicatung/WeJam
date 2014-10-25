@@ -11,7 +11,7 @@ def seed
 
   Musician.create(username: "Josh Marsh", password: "password", email: "jkymarsh@gmail.com", location: "San Francisco", instrument: "Composer", genre: "Hardcore", skill_level: "Awesome", url: "http://jkymarsh.com/", notes: "Composer. I love hardcore. Front-end developer, UI designer, javascript fanatic.", available: [false, true].sample, lat: 37.772999, long:-122.388144)
 
-  # Musician.create(username: "Sandra Cohen", password: "password", email: "sandra.cohen.ux@gmail.com", location: "San Francisco", instrument: "Voice", genre: "Jazz", skill_level: "Crooner Extroardinaire", url: "http://bobandra.com", notes: "I love jamming to jazz and funk, working on my guitar skills. Accapella is my thing!", available: [false, true].sample, lat: 37.752177, long:-122.484237)
+  Musician.create(username: "Sandra Cohen", password: "password", email: "sandra.cohen.ux@gmail.com", location: "San Francisco", instrument: "Voice", genre: "Jazz", skill_level: "Crooner Extroardinaire", url: "http://bobandra.com", notes: "I love jamming to jazz and funk, working on my guitar skills. Accapella is my thing!", available: [false, true].sample, lat: 37.752177, long:-122.484237)
 
   Musician.create(username: "Nick Cantelmi", password: "password", email: "nickcantelmi@gmail.com", location: "San Francisco", instrument: "Guitar", genre: "Rock", skill_level: "Rock On", url: "https://github.com/nickcan", notes: "I love playing Red Hot Chili Pepper songs on the guitar! I get really excited about Ajax. Let's jam!", available: [false, true].sample, lat: 37.793123, long:-122.403101)
 
